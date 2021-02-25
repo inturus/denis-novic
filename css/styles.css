@@ -3,6 +3,7 @@
 html, body {
     height: 100%;
     font-family: 'Montserrat', Arial, Helvetica;
+    overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -45,22 +46,7 @@ ul li {
     margin: 0 auto;
     max-width: 950px;
 }
-@media (max-width: 390px) {
-    .container {
-        /* max-width: 350px; */
-    }
-    .skills__list {
-        flex-direction: column;
-    }
-    .who__block {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    hr {
-        display: none;
-    }
 
-}
 
 .contacts {
     padding: 110px 0 115px;
@@ -131,7 +117,6 @@ ul li {
     z-index: -1;
 }
 .header__list {
-    position: relative;
     z-index: 2;
     align-items: center;
     display: flex;
@@ -146,6 +131,9 @@ ul li {
 }
 .header__link:hover {
     color: black;
+}
+.header .who__lang {
+    display: none;
 }
 
 
@@ -245,6 +233,85 @@ ul li {
 .who__img{
     width: 100%;
 }
+.who__img-mob {
+    display: none;
+}
 strong {
     color: black;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+    .hamburger {
+        cursor: pointer;
+    }
+    .line {
+         width: 30px;
+        height: 3px;
+        background: #000;
+        margin: 5px;
+        }
+    .who__block .who__lang {
+        display: none;
+    }
+    .who__block {
+        padding: 0;
+        flex-direction: column;
+        text-align: left;
+    }
+    .who__name {
+        max-width: 50%;
+    }
+    .who__who-is {
+        margin-top: 20px;
+        max-width:100%;
+    }
+    .who__img{
+        display: none;
+    }
+    .who__img-mob {
+        display: block;
+        width: 100%;
+    }
+    .who {
+        display: flex;
+        justify-content: space-between;
+    }
+    .header__menu .who__lang {
+        transform: rotate(90deg);
+        margin-right: 20px;
+        display: inline-block;
+        align-self: flex-end;
+    }
+    .header__list{
+        margin-top: -35px;
+        position: fixed;
+        background: white;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        height: 100vh;
+        width: 100%;
+        display: none;
+   }
+   .header__item {
+    margin-left: 20px;
+   }
+   .header__list.open {
+       display: flex;
+       pointer-events: all;
+   }
+   .header__menu {
+       display: none;
+   }
+   .header__menu.open {
+       display: flex;
+   }
+    .skills__list {
+        flex-direction: column;
+    }
+    hr {
+        display: none;
+    }
 }
